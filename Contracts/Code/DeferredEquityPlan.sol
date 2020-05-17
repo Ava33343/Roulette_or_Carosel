@@ -11,8 +11,12 @@ contract DeferredEquityPlan {
     bool active = true; // this employee is active at the start of the contract
 
     // @TODO: Set the total shares and annual distribution
-    uint total_shares = 1000
+    uint total_shares = 1000;
+    uint annual_distribution = total_shares/4;
 
+    // @TODO: Test contract via fakenow variable
+    uint fakenow = now;
+    
     uint start_time = now; // permanently store the time this contract was initialized
 
     // @TODO: Set the `unlock_time` to be 365 days from now
@@ -40,7 +44,7 @@ contract DeferredEquityPlan {
 
         // @TODO: Calculate the shares distributed by using the function (now - start_time) / 365 days * the annual distribution
         // Make sure to include the parenthesis around (now - start_time) to get accurate results!
-        distributed_shares = the annual distribution * (now - start_time) / 365 days;
+        distributed_shares = annual_distribution * (now - start_time) / 365 days;
 
         /* double check in case the employee does not cash out until after 5+ years,
            making sure 1000 shares are the maximum vested shares. */
@@ -59,4 +63,11 @@ contract DeferredEquityPlan {
     function() external payable {
         revert("Do not send Ether to this contract!");
     }
+
+    //@TODO: Add this function to "fast forward" time by 100 days
+    function fastforward() public {
+    fakenow += 100 days;
+    
 }
+}
+

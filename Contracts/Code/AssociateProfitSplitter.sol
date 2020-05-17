@@ -5,9 +5,9 @@ Profit distributed equally among employees
 */
 contract AssociateProfitSplitter {
 
-    address payable employee_one = 0x0616d31438078849D3bf66591855B3D3239a9E5c;
-    address payable employee_two = 0x5DBaBe19DD1fedba1B20047059DCd755D8221BF7;
-    address payable employee_three = 0x3e9D41Ec700b98C773f2599052a3590931bEa98c;
+    address payable employee_one;
+    address payable employee_two;
+    address payable employee_three;
 
     constructor(address payable _one, address payable _two, address payable _three) public {
         employee_one = _one;

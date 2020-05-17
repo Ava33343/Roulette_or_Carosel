@@ -1,30 +1,194 @@
-# Unit 20 - "Looks like we've made our First Contract!"
+# Roulette or Carosel?
+## "Remixed" Blockchain Smart Contract
 
 ![contract](https://image.shutterstock.com/z/stock-photo-two-hands-handshake-polygonal-low-poly-hud-illustration-smart-contract-agreement-blockchain-and-1161295627.jpg)
 
-## Background
 
-Your new startup has created its own Ethereum-compatible blockchain to help connect financial institutions, and the team wants to build smart contracts to automate some company finances to make everyone's lives easier, increase transparency, and to make accounting and auditing practically automatic!
+### _**Are we rewarded based on merits at work?**_
 
-Fortunately, you've been learning how to program smart contracts with Solidity! What you will be doing this assignment is creating a few `ProfitSplitter` contracts. These contracts will do several things:
+**Story**: Our company is recently founded with three members. We are creating ethereum smart contract to democratize payment system, increase transparency and automate tax filing procedures. 
 
-* Pay your Associate-level employees quickly and easily.
+_**Profits are distributed following a "trilogy" schedule as described below:**_
 
-* Distribute profits to different tiers of employees.
+> Level 1: equally among employees
+> 
+> Level 2: based on tiers 
+> 
+> Level 3: how long members hanging with us 
 
-* Distribute company shares for employees in a "deferred equity incentive plan" automatically.
+<details><summary>
+Human Resources Account Address
+</summary>
+
+HR: 0x8EaaBB9Fc753df2C50F0b01E99b4e0F1f2d970A6
+</details>
+
+<details><summary>
+Account Addresses for Members
+</summary>
+
+```
+CEO: 0x0616d31438078849D3bf66591855B3D3239a9E5c
+
+CTO: 0x5DBaBe19DD1fedba1B20047059DCd755D8221BF7
+
+Bob: 0x3e9D41Ec700b98C773f2599052a3590931bEa98c
+```
+
+</details>
+
+_**Initial Balance on Ganache**_
+
+_Lauch Ganache on [Localhost: 8545](HTTP://127.0.0.1:8545)_
+
+Ganache View
+
+![Ganache Initial Balance](Contracts/Images/ganache_0.png)
+_Note: Three member addresses (the first three) followed by HR address (the fourth)._
+
+
+---
+## **TYPES OF CONTRACTS**
+
+---
+**Level-One: EQUAL SPLIT**
+
+_**Goal**: Distribute profits evenly among members._
+
+```
+AssociateProfitSplitter
+```
+
+_**Step 1: Deploy**_
+* A green check mark should appear should the process be successful
+
+_**Step 2: Compile**_
+* Choose `Injected Web3` for _ENVIRONMENT_
+  * Route to local network as Ganache
+* Keep 0 for _VALUE_ 
+* Enter the three member addresses
+![level_1_deploy](Contracts/Images/level_1_deploy.png)
+* Confirm on _**MetaMask**_ Notification
+  * Make sure _MetaMask_ is hooked onto Localhost 8545
+![level_1_compile](Contracts/Images/level_1_compile.png)
+
+_**Step 3: Deposit**_
+
+* Change the _VALUE_ to 12 ether
+![level_1_deposit](Contracts/Images/level_1_deposit_12eth.png)
+* Click on the red `deposit` button under _Deployed Contracts_ and confirm _MetaMask_ notification
+![level_1_deposit_confirm](Contracts/Images/level_1_deposit_12eth_confirm.png)
+
+_**View Transactions: Relaunch Ganache**_
+  * Balance on each of the three accounts increased by approximately 4 ether, which is provided by 12 ETH divided by 3 
+  * HR Account, fourth from the top, has its balance dropped by approximately 12 ETH 
+      * adjusted by gas fees
+
+![level_1_post](Contracts/Images/level_1_12eth_post.png)
+
+
+---
+**Level-Two: RANK-BASED SHARING**
+
+_**There is always another door! Let's climb. Shall we?**_
+
+_**Goal**: Distribute profits to different tiers of employees._
+
+```
+TieredProfitSplitter
+```
+
+_**Step 1: Deploy**_
+* A green check mark accompanies a successful deployment
+![level_2_deploy](Contracts/Images/level_2_deploy.png)
+
+
+_**Step 2: Compile**_
+* Choose `Injected Web3` for _ENVIRONMENT_
+  * Route to local network as Ganache
+* Keep 0 for _VALUE_ 
+* Enter the three member addresses
+![level_2_compile](Contracts/Images/level_2_compile.png)
+* Confirm on _**MetaMask**_ Notification
+  * Make sure _MetaMask_ is hooked onto Localhost 8545
+![level_2_compile_confirm](Contracts/Images/level_2_compile_confirm.png)
+
+
+_**Step 3: Deposit**_
+
+* Ganache View pre-distribution
+  * A drop of 0.01 ETH from prior balance of 97.99 ETH for HR Account due to gas fee on deployment
+![level_2_pre](Contracts/Images/level_2_pre.png)
+* Change the _VALUE_ to 10 ether, click on the `deposit` button under the second _Deployed Contracts_ for tiered distribution schedule and confirm the notification on _MetaMask_ 
+![level_2_deposit](Contracts/Images/level_2_deposit_10eth.png)
+
+* Click on the red `deposit` button under _Deployed Contracts_ and confirm _MetaMask_ notification
+![level_1_deposit_confirm](Contracts/Images/level_1_deposit_12eth_confirm.png)
+
+_**View Transactions: Relaunch Ganache**_
+  * Balance on each of the three accounts increased by approximately 4 ether, which is provided by 12 ETH divided by 3 
+  * HR Account, fourth from the top, has its balance dropped by approximately 12 ETH 
+      * adjusted by gas fees
+
+![level_1_post](Contracts/Images/level_1_12eth_post.png)
+
+
+
+
+
+
+---
+
+**Level-Three: VESTED SHARES** 
+
+_**THANK YOU for Hanging with Us!**_
+
+_**Goal**: Distribute company shares for employees in a "deferred equity incentive plan" automatically._
+```
+DeferredEquityPlan
+```
+
+```solidity
+   /* @TODO: Test contract via fakenow variable
+    uint fakenow = now;
+    
+       @TODO: Add this function to "fast forward" time by 100 days
+    function fastforward() public {
+    fakenow += 100 days;
+}
+*/
+```
+
+## Next Steps
+
+To view transactions on 
+[Kovan EtherScan](https://etherscan.io/)
+
+_**Option 1: Kovan Testnet**_
+
+Need to fund HR account at the following address
+_HR: 0x9708fE802D559697585C54E3e68Ce635D6095DCf_
+
+![kovan_funding](Contracts/Images/kovan_funding.png)
+
+Then, follow the same process as on `localhost:8545` to distribute to three different addresses for CEO, CTO and Bob.
+
+_**Option 2 Coming up: Customized Ethereum Testnet**_
+
+Again, need to run nodes to fund crypto account by connecting to customized network on MyCrypto Wallet. 
+
+---
 
 ## Files
 
-* [`AssociateProfitSplitter.sol`](Starter-Code/AssociateProfitSplitter.sol) -- Level 1 starter code.
+* [Level-One: Equal-Split](Contracts/Code/AssociateProfitSplitter.sol) 
 
-* [`TieredProfitSplitter.sol`](Starter-Code/TieredProfitSplitter.sol) -- Level 2 starter code.
+* [Level-Two: Rank-based Sharing](Contracts/Code/TieredProfitSplitter.sol) 
 
-* [`DeferredEquityPlan.sol`](Starter-Code/DeferredEquityPlan.sol) -- Level 3 starter code.
+* [Level-Three: Vested Shares](Contracts/Code/DeferredEquityPlan.sol) 
 
-## Instructions
-
-This assignment has 3 levels of difficulty, with each contract increasing in complexity and capability. Start with Level 1, then move forward as you complete the challenges. You can build all three with the skills you already have!
+---
+# References
 
 * **Level One** is an `AssociateProfitSplitter` contract. This will accept Ether into the contract and divide the Ether evenly among the associate level employees. This will allow the Human Resources department to pay employees quickly and efficiently.
 
