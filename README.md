@@ -12,6 +12,39 @@ _**Profits are distributed following a "trilogy" schedule as described below:**_
 > 
 > Level 3: how long members hanging with us 
 
+---
+**Kovan Transaction for Level-One Contract: _EQUAL SPLIT_**
+
+![tx_kovan_0](Contracts/Images/tx_kovan_0.png)
+_Note: CEO, CTO and Bob each get a third of 0.1 ETH, in other words, 0.0333 ETH based on the contract._
+
+<details><summary>
+See Tiered Transaction on Kovan of 0.3 ETH from HR (click me)
+</summary>
+
+![tx_kovan_tiered](Contracts/Images/kovan_tiered.png)
+
+</details>
+
+
+**Ropsten Transaction for Level-Two Contract: _Tiered Distribution_**
+
+![tx_ropsten_tiered](Contracts/Images/tx_ropsten_tiered.png)
+_Note: CEO gets 60% of 0.15 ETH, i.e. 0.09 ETH; CTO gets 25% of 0.15 ETH, thus 0.0375 ETH; and Bob gets 15% of 0.15 ETH, or 0.0225 ETH._
+
+
+<details><summary>
+See Equal-Split Transaction on Ropsten of 0.03 ETH from HR (click me)
+</summary>
+
+![tx_ropsten_tiered](Contracts/Images/tx_ropsten.png)
+
+</details>
+
+---
+
+
+
 <details><summary>
 Human Resources Account Address
 </summary>
@@ -41,6 +74,8 @@ _**Balances View on [Ganache](https://www.trufflesuite.com/ganache)**_
 
 ![Ganache Initial Balance](Contracts/Images/ganache_0.png)
 _Note: Three member addresses (the first three) followed by HR address (the fourth)._
+
+
 
 
 ---
