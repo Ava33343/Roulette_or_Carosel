@@ -26,6 +26,8 @@ See Tiered Transaction on Kovan of 0.3 ETH from HR (click me)
 
 </details>
 
+_**[Kovan Transaction Records](Contracts/Records/Kovan)**_
+
 
 **Ropsten Transaction for Level-Two Contract: _Tiered Distribution_**
 
@@ -41,15 +43,21 @@ See Equal-Split Transaction on Ropsten of 0.03 ETH from HR (click me)
 
 </details>
 
+_**[Ropsten Transaction Records](Contracts/Records/Ropsten)**_
+
 ---
 
+
+**Initial Balances on Ganache**
 
 
 <details><summary>
 Human Resources Account Address
 </summary>
 
+```
 HR: 0x8EaaBB9Fc753df2C50F0b01E99b4e0F1f2d970A6
+```
 </details>
 
 <details><summary>
@@ -66,7 +74,6 @@ Bob: 0x3e9D41Ec700b98C773f2599052a3590931bEa98c
 
 </details>
 
-**Initial Balance on Ganache**
 
 _Lauch Ganache on [Localhost: 8545](HTTP://127.0.0.1:8545)_
 
@@ -181,7 +188,7 @@ _**Goal**: Distribute company shares for employees in a "deferred equity incenti
 ```
 DeferredEquityPlan
 ```
-_**Deploy, Compile and Deploy**_
+_**Deploy and Compile!**_
 
 ![level_3_deposit](Contracts/Images/level_3_functions.png)
 
@@ -207,15 +214,25 @@ _The balance on HR Account decreased by 0.01 ether for gas fee on deployment._
 To view transactions on 
 [Kovan EtherScan](https://etherscan.io/)
 
-_Switch _MetaMask_ from Localhost 8545 to Kovan Test Network_
+_Switch _MetaMask_ from Localhost 8545 to Kovan and Ropsten Test Network_
 ![MetaMask](Contracts/Images/localhost_8545.png)
 
-_**Option 1: Kovan Testnet**_
+_**Option 1: Kovan or Ropsten Testnet**_
+
+_See screenshots at the beginning for confirmations_
 
 Need to fund HR account at the following address
-_HR: 0x9708fE802D559697585C54E3e68Ce635D6095DCf_
+```
+HR: 0x8EaaBB9Fc753df2C50F0b01E99b4e0F1f2d970A6
+```
+
+<details><summary>
+Sample testcoin funding on Kovan
+</summary>
 
 ![kovan_funding](Contracts/Images/kovan_funding.png)
+
+</details>
 
 Then, follow the same process as on `localhost:8545` to distribute to three different addresses for CEO, CTO and Bob.
 
@@ -232,6 +249,10 @@ Again, need to run nodes to fund crypto account by connecting to customized netw
 * [Level-Two: Rank-based Sharing](Contracts/Code/TieredProfitSplitter.sol) 
 
 * [Level-Three: Vested Shares](Contracts/Code/DeferredEquityPlan.sol) 
+
+* [Kovan Transactions](Contracts/Records/Kovan) 
+
+* [Ropsten Transactions](Contracts/Records/Ropsten)
 
 ---
 # References
